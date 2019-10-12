@@ -1,0 +1,11 @@
+Probleam Statements:
+
+1) if there is json data getting pushed to kafka from sensor. after consuming it in spark will get complete json in one column called 'value'.
+In order to porform analysis will have to flatten the json. in order to flatten json will need schema.
+
+Suppose Schema is provided in schema registory as string in json format.
+
+How can we convert value column json to spark df using provided schema.
+
+Answer:
+
