@@ -1,0 +1,7 @@
+How to Check Number of Executers and Driver For given Application.
+-> go to spark WEB UI and got to tab Jobs -> Event Timeline -> it will show graph of executers and drivers. Even you can get details and address/ips of driver and executers in Executers tab.
+
+
+How long Spark Web UI's Exist and how can i see spark Web UI for already completed application.
+-> Spark web UI only exist only for life of spark application. u can get it again from spark history server.
+
