@@ -1,0 +1,22 @@
+What is Spark session?
+-> Spark session is data structure where driver maintains all information including all executer's location and it's status. spark application begins by creating spark session.
+first thing in spark 2.x application.
+
+Steps for Driver and Executers Creation in Client Mode:
+
+1) Main class will launch the Driver at client machine. Once Drivercreated, it will creates the spark session. as soon as driver creates spark session request goes to yarn resource manager to create yarn application.
+2) yarn RM creates Application Master. For client mode AM act as executer's launcher. AM reach outs to RM and request for further containers.
+3) RM will launch the containers and AM will launch the executers in each containers.
+4) After all above steps executers will directly communicates to driver.
+
+Steps For Driver and Executers creation in CLuster Mode:
+
+1) Application Will be submitted to cluster using spark-submit utility.
+2) spark-submit utility will send yarn application request to yarn RM.
+3) RM will start AM(AM Container). And AM will starts driver will start in AM Container.(this is where difference between client and cluster Mode)
+.
+4) Once driver started, driver will reach out to RM For more container request to launch Executers.
+5) RM will allocates new Containers.
+6) Driver starts executers in each containers.
+
+
