@@ -1,0 +1,2 @@
+How to cleanup of hdfs files older than a certain date?
+---> hdfs dfs -find file_to_delete -type 'f' -name '*txt' -mtime +10 -exec rm {} \;
