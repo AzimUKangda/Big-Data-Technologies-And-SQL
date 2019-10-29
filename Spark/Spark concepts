@@ -19,4 +19,22 @@ Steps For Driver and Executers creation in CLuster Mode:
 5) RM will allocates new Containers.
 6) Driver starts executers in each containers.
 
+Spark DataFrames:
+
+There is no such class called DataFrame in spark documentation. DataFrame is type defined as DataSet[Row].
+
+There are two types of transofrmations
+
+1) Typed Transformation -> alwayes returns dataset 
+2) Untyped Transformations
+
+When you executes any action of dataframes, spark will do to kind of optimiztion
+
+1) pipelining -> which will see and combine certain operation if possible
+2) Predicate Pushdown -> Which will do filter operation fist if any.
+
+So optimized logical plan will go to spark engine(comipler) which will generate physical paln which is nothing but series of rdds.
+
+
+
 
