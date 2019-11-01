@@ -59,4 +59,18 @@ spark.catalog.listTables.show
 globl tmp table can be availbe in global_tmp database.
 spark.catalog.listTables("global_tmp").show
 
+** Spark dataFrame Reader gives option called mode to control malformed data. 
 
+There are three values you can specify for it.
+
+
+1) permissive  -- default. if any of record is mailformed, spark wil put null for all columns and push the entire row into string column _corrupt_record. this allowes you to dum this row to separate location.
+2) dropmalformed  -- will drop malformed records.
+3) failfast -- will throw exception if any malformed records found.
+
+** Spark dataFrame Writer provide mode option for file based destination.
+
+1)append
+2)overwrite
+3)erroIfExists  - ignore without any error if file exist.
+4)ignore
