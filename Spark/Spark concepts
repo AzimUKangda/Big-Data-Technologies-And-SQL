@@ -36,5 +36,27 @@ When you executes any action of dataframes, spark will do to kind of optimiztion
 So optimized logical plan will go to spark engine(comipler) which will generate physical paln which is nothing but series of rdds.
 
 
+** spark data frames always uses spark data type irrespective of language used.
+
+** Data Frame Methods to create views.
+
+There are two type of view possible using DataFrame Methods
+
+1) Global Tmp View --> Visible at application level. will be available across the session.
+2) Local Tmp View --> visible only at session level.
+
+both leaves till application is alaive and will be visible only in that aplication. 
+
+we can have multiple spark session for a single spark application. spark session internally creates spark context. context represents a connection to \
+spark cluster. context also keeps track of all rdds, cached data as well as configuartions. only one context per application(single JVM).
+
+usual application wont't need to coreate multiple spark sessions. application which needs to support multiple users in parallel in such scenarioes will need multiple session.
+
+** wthere can i see temp view or table crated by df methods.
+--> it will be maintain by spark session. spark session offers you catalog. catalog is interface which offres you alter, drop underling database tables and functions.
+spark.catalog.listTables.show
+
+globl tmp table can be availbe in global_tmp database.
+spark.catalog.listTables("global_tmp").show
 
 
