@@ -1,0 +1,17 @@
+How to Return Option Value From Function.
+--> Option(value).filter(_.nonEmpty)
+
+How to Check Value Returned As Option or check value of Option Type
+--> There are three ways
+1) Using Pattern Matching
+2) Using getOrElse
+3) Using map
+
+How to Define Function with implicit parameter
+---> def function(val1: Int)(implicit val2:Double) 
+
+How to Call Function with implicit parameter
+---> declare implicit variable in the scope wherever function will be called. or pass value with addition bracket like declaration of function.
+
+
+
