@@ -11,7 +11,33 @@ How to Define Function with implicit parameter
 ---> def function(val1: Int)(implicit val2:Double) 
 
 How to Call Function with implicit parameter
----> declare implicit variable in the scope wherever function will be called. or pass value with addition bracket like declaration of function.
+---> declare implicit variable in the scope wherever function will be called. or pass value with addition bracket like declaration of 
+function.
+
+Referential Transparency?
+---> A function is said to be referentially transparent if we can replace it with a corresponding value without changing the program's
+behaviour.
+
+side effect --> Function should not modify any outside variable/input param.
+
+why Pure Function?
+
+1) Encourage safe ways of programming.
+2) simple and easy to re-use.
+3) composable or modular. (andThenThis) -- function composition.
+4) Easy to test.
+5) Memoizable (you can cache the function)
+6) Pure Function can be lazy.
+
+What is First class Function?
+--> If you can treat a function as a value, it is a first class function. you can pass function as arg also you can return function from 
+other function.
+
+by default all function in scala are first class function.
+
+
+
+
 
 
 
