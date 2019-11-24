@@ -35,6 +35,23 @@ other function.
 
 by default all function in scala are first class function.
 
+**** Example of Function Returning another function :
+
+ def getFunction(c: Int) = (i: Int) => {
+    val doubler = (x: Int) => { x * 2 }
+    val tripler = (x: Int) => { x * 3 }
+    if (c > 1) doubler(i)
+    else tripler(i)
+  }
+  
+using anonymous function same above thing we can achieve as:
+
+def getFunction(c: Int) = (i:Int) => {
+  if(c>0) {i*2}
+  else {i*3}
+}
+
+Abstraction is main purpos of 
 
 
 
