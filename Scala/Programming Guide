@@ -51,7 +51,11 @@ def getFunction(c: Int) = (i:Int) => {
   else {i*3}
 }
 
-Abstraction is main purpos of 
+Immutability helps to adopt a methametical approach.
+Immutable variable is more thread safe.
+
+
+
 
 
 
