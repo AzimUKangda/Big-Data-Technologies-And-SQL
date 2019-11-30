@@ -80,3 +80,17 @@ RDD is In Memory object on which all operations will be performed. it's datastru
 as rows or records.
 
 The Records of transformations is called RDD Lineage.
+
+DStreams are sequence of RDDs. This is also called microbatching.
+
+---> Difference Between Spark 1.x and 2.x
+
+In Spark 1.x, Execution Optimization follows Traditional DBMS way of optimizarion technique called Volcano Iterator Model,which missed
+several code/compiler optimizarion.
+
+IN Spark 2.x, Tungeation Optimization brought several Better Code optimizatio.
+Frequently used data was getting stored in Registers not in RAM/Cache.
+GC Was greatly reduced.
+
+
+
