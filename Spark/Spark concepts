@@ -74,3 +74,9 @@ There are three values you can specify for it.
 2)overwrite
 3)erroIfExists  - ignore without any error if file exist.
 4)ignore
+
+---> What is RDD.
+RDD is In Memory object on which all operations will be performed. it's datastructure or collection of entities, entities can be consider
+as rows or records.
+
+The Records of transformations is called RDD Lineage.
