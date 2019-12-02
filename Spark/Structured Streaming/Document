@@ -1,0 +1,23 @@
+Trigger Time & Event Time 
+
+-----> Processing in Structured Streaming take place based on Trigger time not on Event Time(unless we use watermarking).
+
+How Structured Streaming Works.
+
+-----> Structured Streaming Read Data From Source Process Incrementally, updates results & Discards source. Only minimal intermediate state 
+maintained.
+
+When Writting to sink. entire table is not materialized. what is written out depends on the mode.
+
+Develper can configure output mode.
+
+Structured streming supports Three modes. which will determines what result table rows get sent to storage.
+
+1) Update Mode -- Send All rows which are updated since last trigger. Even Previous rows/results will get updated in case of aggregations.
+2) Append Mode -- Only new rows will get appened. Previous result rows can't change.
+3) complete Mode -- Complete table will get written in each trigger. At output side, size of data will be very huge.storage connector must
+decide how to use all data.
+
+
+
+
