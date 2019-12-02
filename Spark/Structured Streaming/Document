@@ -18,6 +18,36 @@ Structured streming supports Three modes. which will determines what result tabl
 3) complete Mode -- Complete table will get written in each trigger. At output side, size of data will be very huge.storage connector must
 decide how to use all data.
 
+StateFull & Stateless operation on Streaming Data.
+
+Stateless -- Transformations which are applied on a single stream entity.
+StateFull -- Transformations which accumulate across multiple stream entities.
+ 
+How to Do StateFull Operation On Streaming Data?
+---> Windowing is needed to accumulate entities.
+
+There are Three way of doing Statefull operation on Streams
+1) Time Interval -- Rather than considering data from begning of stream, will consider data within specified interval.
+2) Count Of Entities -- Like, Last 10 Stream or 5 Streams
+3) Interval Between Entities -- also called session Windows.
+
+Type Of Windows
+---> There are 5 Type of Windows.
+1) Tumbling Window -- Supported by Spark
+2) Sliding Window -- Supported by Spark 
+3) Count Window -- Not Supported by Spark
+4) Session Window -- Not Supported by Spark
+5) Global Window -- Supported by Spark
+
+Tumbling Window --> Each Window will have data of fixed Interval. There is no overlapping of data. window tumbles over data in 
+non overlapping way.
+
+Sliding Window -->  Each Window will have data of fixed Interval. There will be overlapping of data.
+
+Global Window --> Data Accumulated from begning of stream in Window is called Global Window.
+
+
+
 
 
 
