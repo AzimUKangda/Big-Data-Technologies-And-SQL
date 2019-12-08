@@ -48,7 +48,9 @@ Global Window --> Data Accumulated from begning of stream in Window is called Gl
 
 Notes:
 
-Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark
+Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark.
+Complete Mode not supported on streaming queries with out aggreagtion.
+
 
 
 
