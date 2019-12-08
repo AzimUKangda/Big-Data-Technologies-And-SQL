@@ -46,6 +46,10 @@ Sliding Window -->  Each Window will have data of fixed Interval. There will be 
 
 Global Window --> Data Accumulated from begning of stream in Window is called Global Window.
 
+Notes:
+
+Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark
+
 
 
 
