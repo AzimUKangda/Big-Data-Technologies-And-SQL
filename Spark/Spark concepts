@@ -92,5 +92,8 @@ IN Spark 2.x, Tungeation Optimization brought several Better Code optimizatio.
 Frequently used data was getting stored in Registers not in RAM/Cache.
 GC Was greatly reduced.
 
+How to add source File Name to each record of spark dataframe.
+---> df.withColumn("filename",input_file_name())
+
 
 
