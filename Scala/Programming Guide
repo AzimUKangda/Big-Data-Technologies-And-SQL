@@ -54,6 +54,34 @@ def getFunction(c: Int) = (i:Int) => {
 Immutability helps to adopt a methametical approach.
 Immutable variable is more thread safe.
 
+how to write a factorial or fibonacci function correctly using TailCalls
+
+object Factorial {
+
+  /**
+    * Returns the nth factorial
+    */
+  def apply(n: Long): BigInt = {
+    if (n < 0)
+      throw new IllegalArgumentException("Can't factorial to an index less than 0")
+    else {
+      import scala.util.control.TailCalls._
+      def step(current: Long): TailRec[BigInt] = {
+        if (current <= 0)
+          done(1)
+        else
+          tailcall {
+            for {
+              next <- step(current - 1)
+            } yield current * next
+          }
+      }
+      step(n).result
+    }
+  }
+
+}
+
 
 
 
