@@ -1,0 +1,33 @@
+1-core = 1-task = 1-partition
+
+while writting file, if you want to decrease number of file creation or you want to increase file size of write, use colease insted of 
+repartition.
+
+in data bricks please use DB/IO Caching or delta caching. it's 5 to 6 times faster than memory cache.
+
+difference between persisit and brodacast 
+
+--> in persisit
+
+assume i have df of size 12gb, 6 partitions and 3 executers.
+
+2 partitions will be copied to each executes. 4gb of ram in each execture will be occupied.
+
+in broadcat
+
+each execute will get 2 partition. than data of each partition will be copied to driver using collect and hashmap will be created and
+copy of it will be send to each executer.
+
+that means each executer will have complete set of data.
+
+use <=> in condition statement, becuse it's null safe, means it will not compare nulls if it finds it will remove those and will save time.
+
+also use not exist insted of not in 
+
+Range join optimization.
+
+drop duplicates before group by, join 
+
+aprroxcountdistinct.
+
+
