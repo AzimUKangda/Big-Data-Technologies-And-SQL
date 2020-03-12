@@ -95,5 +95,7 @@ GC Was greatly reduced.
 How to add source File Name to each record of spark dataframe.
 ---> df.withColumn("filename",input_file_name())
 
+How to find last one hour timestamp from given timestamp.
+df2.select(max($"ts").alias("time")).withColumn("one_hour_bfr",from_unixtime(unix_timestamp($"time").minus(3600))).show(false)
 
 
