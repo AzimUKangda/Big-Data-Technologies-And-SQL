@@ -1,0 +1,24 @@
+What is Data Modeling?
+--> A Data Modeling refers to practice of documenting software or business system desing. In Data Warehouseing, Data Model will give design
+of warehouse.
+It will tell developer or business how data flows in my business or how data is getting stored in my warehouse.
+A data model is used to document, define, organize, and show how the data structures within a given database, architecture, application, or 
+platform are connected, stored, accessed, and processed within the given system and between other systems.
+
+Data modeling is a representation of the data structures in a table for a company’s database and is a very powerful expression of the 
+company’s business requirements. This data model is the guide used by functional and technical analysts in the design and implementation 
+of a database.
+
+Need of Data Model?
+---> data models depict and enable an organization to understand its data assets. it will be easy for business to see how their system looks like
+insted of going into actual system/Database.
+
+Type of Data Model?
+--> 3 type of Data Models are available
+1) Conceptual Data Model
+2) Physical Data Model
+3) Logical Data Model
+
+What is Conceptual Data Model?
+---> 
+
