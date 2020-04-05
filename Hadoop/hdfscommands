@@ -1,2 +1,8 @@
 How to cleanup of hdfs files older than a certain date?
 ---> hdfs dfs -find file_to_delete -type 'f' -name '*txt' -mtime +10 -exec rm {} \;
+
+use of put command:         
+		
+Multiple file copy : hadoopfs -put localfile1 localfile2 /user/hadoop/hddir	
+Stdin Support	support reading from stdin where as copyFromLocal does not support reading from stdin
+
