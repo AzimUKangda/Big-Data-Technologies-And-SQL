@@ -10,12 +10,6 @@ import java.util.stream._
 
 object Solution {
 
-    // Complete the reverseArray function below.
-    def reverseArray(a: Array[Int]): Array[Int] = {
-
-
-    }
-
     def main(args: Array[String]) {
         val stdin = scala.io.StdIn
 
