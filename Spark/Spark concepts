@@ -33,6 +33,17 @@ When you executes any action of dataframes, spark will do to kind of optimiztion
 1) pipelining -> which will see and combine certain operation if possible
 2) Predicate Pushdown -> Which will do filter operation fist if any.
 
+How to delete rows containing null in any column in spark?
+df.na.drop()
+
+How to get id which contains null in any of the column?
+var ids = spark.emptyDataFrame.withColumn("ids",lit(""))
+inputDF.columns.foldLeft(inputDF)((inputDF,column) => {
+ ids = ids.unionByName(inputDF.select("id").where(col($"column").isNull))
+ inputDF
+})
+
+
 So optimized logical plan will go to spark engine(comipler) which will generate physical paln which is nothing but series of rdds.
 
 
