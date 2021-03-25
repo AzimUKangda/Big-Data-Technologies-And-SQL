@@ -1,0 +1,15 @@
+System design Interview question:
+There are 4 different sources of data like rest api,sftp,rdbms,file storage/blob storage
+Combined data of 2 GB daily.
+Need to Build a streaming application .Data has to be sent every 2 mins.Need to build a dashboard using the streaming data which refreshes every 5 secs.
+
+Solution:
+1. Assuming we are using  Azure cloud services
+
+2. For the rest api endpoint , we will have azure event hub , in order to capture the hits , let's store the event in blob storage , mostly this will be in binary format/json.  let's use databricks to clean and store in data Lake in delta format
+
+3. SFTP, rdbms and blob .. let's connect all of them in an another databricks notebook. Save 3 of them in data Lake .. again in delta table.. let's call them raw table
+4. In the final , notebook join / merge all the datasets into one table to get the aggregate/ enriched copy
+5. Connect power bi with databricks , using Power bi connector or SQL analytics to access the delta tables directly. now let's create a visualisation ( sort of time series ) to represent all the 4 system's last updated timestamp.. 
+
+6. Further to which we can integrate real time alert mechanism in case our data refresh cross any threshold
