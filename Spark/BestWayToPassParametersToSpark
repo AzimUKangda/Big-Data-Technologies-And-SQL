@@ -1,0 +1,105 @@
+Pass Spark Parameters using --paramName value to Spark Submit command.
+
+/opt/spark/bin/spark-submit\
+ --properties-file /srv/app/config/spark.properties
+ --class com.test.Runner $jar \
+ --root $root \
+ --run_date $runDate \
+ --app_name $appName \
+ --master $master 2>&1
+ | tee -a $logDir/$appName
+ 
+This all param will be passed to main method as array of String.
+
+Steps to be done in Scala code to get this param in programm.
+
+Step 1:
+
+Define Abstract class as well as object like SparkRunnerArguments which will be master class. in object define parse method.
+
+abstract class SparkRunnerArguments{
+def root: String
+def run_date: String
+def app_name: String
+def master: String
+}
+
+object SparkRunnerArgument{
+
+def printHelp() = println(
+    """Usage:
+    --root /data --run_date 2015_01_10 --app_name name1 --master local[*]
+    --root /data --run_date 2015_01_10  --app_name name1 --master local[*]
+    """)
+    
+ def parse[T <: SparkRunnerArguments](args: Array[String], factory: Map[String, String] => T, extraHelp: String = ""): Either[Any, T] = {
+    val map = parseArguments(Map(), args.toList)
+
+    val printHelp = () => {
+      SparkRunnerArguments.printHelp()
+      println(extraHelp)
+      Left(None)
+    }
+
+    try {
+      if (map.contains("h") || map.contains("help")) {
+        printHelp()
+      }
+      else {
+        val f = factory(map)
+        println(s"Arguments: $f")
+        Right(f)
+      }
+    }
+    catch {
+      case e: Exception =>
+        printHelp()
+        throw e
+    }
+  }    
+}
+
+def parseArguments(map : Map[String, String], list: List[String]) : Map[String, String] = list match {
+    case param :: value :: tail if param.startsWith("--") => parseArguments(map + (param.substring(2).toLowerCase -> value), tail)
+    case Nil => map
+  }
+ } 
+  
+
+Step 2: degine case class which will extends above abstarct class
+
+case class DemoRunnerArgument(
+    master: String,
+    app_name: String,
+    run_date: String,
+    root: String
+    ) extend SparkRunnerArgument
+{
+
+  def this (args: Map[String, String]) = {
+    this(
+      args("master"),
+      args("app_name"),
+      args("run_date"),
+      args("root")
+    )   
+}
+
+Step3:
+
+Define main method and 
+
+val arguments: DemoRunnerArgument = SparkRunnerArguments
+      .parse(
+        args,
+        a => new DemoRunnerArgument(a),
+        extraHelp =
+          "Also use --root root1"
+      )
+      .right
+      .get
+    
+    
+
+ 
+ 
