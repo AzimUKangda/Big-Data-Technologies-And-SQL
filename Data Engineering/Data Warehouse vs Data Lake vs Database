@@ -1,0 +1,50 @@
+what is Database?
+
+System which hold data. It deals with transactional data. Data used for day to day basis (like bank transactional).
+
+OLTP - online trasactional data.
+
+Structured data.
+
+Recent data - day to day data.
+
+Example :- Online banking transaction.
+
+It can not hold year of data.
+
+Scheam on Write
+
+the cost to store the data in database is high.
+
+
+what is data warehouse - DWH
+
+Aanlytcial processing where we require a lot of historical data to find the insights.
+
+The moment we run complex queire on out database with an intent to do some analysis then your day to day transaction will become slow hence we take the data from databases and migrate it to data warehouse to do analytical processing.
+
+we get the data from multiple sources.
+
+Structured dara - Schema on write.
+
+Data Lake
+
+Like Data warehouse, this is also ment to get insights from hug amount of data.
+
+the data is present in it's raw for. It can be structured or unstrauctured.
+
+Log file - we can have as is in storage in raw format in datalake.
+
+it follows ELT process. 
+
+teradata is an example.
+
+storage cost is high but lesser than your databases.
+
+ETL Process - sometimes, data may require some changes for analytical purpose, hence we use ETL process to bring it to required format.
+
+This approach reduces our flexibiity.
+
+cost effective (becuse it use chip storages)hence we can keep 10s of 100s years of data.
+
+Schema on Read :- employee.csv is stored separate, schema is stored separate. 
