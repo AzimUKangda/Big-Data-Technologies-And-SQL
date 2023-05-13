@@ -19,6 +19,7 @@ the cost to store the data in database is high.
 
 what is data warehouse - DWH
 
+Data warehouses are central repositories of integrated data from one or more disparate sources.
 Aanlytcial processing where we require a lot of historical data to find the insights.
 
 The moment we run complex queire on out database with an intent to do some analysis then your day to day transaction will become slow hence we take the data from databases and migrate it to data warehouse to do analytical processing.
@@ -48,3 +49,4 @@ This approach reduces our flexibiity.
 cost effective (becuse it use chip storages)hence we can keep 10s of 100s years of data.
 
 Schema on Read :- employee.csv is stored separate, schema is stored separate. 
+
