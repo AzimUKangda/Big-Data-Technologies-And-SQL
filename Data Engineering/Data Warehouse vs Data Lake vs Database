@@ -22,7 +22,7 @@ what is data warehouse - DWH
 Data warehouses are central repositories of integrated data from one or more disparate sources.
 Aanlytcial processing where we require a lot of historical data to find the insights.
 
-The moment we run complex queire on out database with an intent to do some analysis then your day to day transaction will become slow hence we take the data from databases and migrate it to data warehouse to do analytical processing.
+The moment we run complex queire on our database with an intent to do some analysis then your day to day transaction will become slow hence we take the data from databases and migrate it to data warehouse to do analytical processing.
 
 we get the data from multiple sources.
 
