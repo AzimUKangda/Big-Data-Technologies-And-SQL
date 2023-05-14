@@ -50,3 +50,6 @@ cost effective (becuse it use chip storages)hence we can keep 10s of 100s years 
 
 Schema on Read :- employee.csv is stored separate, schema is stored separate. 
 
+What is data Lakehouse?
+
+--> A data lakehouse combines the performace, functionality and governance of data warehouse with scalability and cost advantage of a data lake. with data lakehouse, engines can access and manipulate data directly from data lake storage without copying data into expensive propritary systems using ETL pipelines.
