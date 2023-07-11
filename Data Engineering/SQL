@@ -1,0 +1,3 @@
+Question: How to get years of expereince if hiredate is given in data?
+Answer : round(PERIOD_DIFF(EXTRACT(YEAR_MONTH FROM NOW()), EXTRACT(YEAR_MONTH FROM hiredate))/12) AS year_of_exp.
+
