@@ -4,5 +4,14 @@ Answer : round(PERIOD_DIFF(EXTRACT(YEAR_MONTH FROM NOW()), EXTRACT(YEAR_MONTH FR
 Question: List the employees who joined in the company on the same day.
 Answer: select * from employee e where hiredate in (select hiredate from employee where e.empno <> empno);
 
+Question: Emps hired on or before 15th of any month are pais on he last friday of that month those hired after 15th are paid on the first firday of the following 
+month. print a list of emps their hire date and the first pay date. sort on hire date.
+
+Answer: select ename, hiredate, next_day(last_day(hiredate),'FRIDAY') - 7 from employee where day(hiredate) <=15
+                                      union
+        select ename,hiredate,next_day(last_day(hiredate),'FRIDAY') from emp where day(hiredate) > 15;
+
+
+
 
 
