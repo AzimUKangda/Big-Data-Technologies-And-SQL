@@ -43,6 +43,8 @@ select c.customer_id, c.order_date, fv.first_visit_date, case when c.order_date 
 
 Scenario 2:
 
+Employee acess on different floor of companies premise.
+
 CREATE TABLE employee_access (
  name TEXT,
  address TEXT,
