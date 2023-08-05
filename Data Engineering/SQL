@@ -78,6 +78,16 @@ select fv.name, fv.floor, tv.total_visit, tv.resources_used as most_visited_floo
 inner join total_visit tv on fv.name=tv.name
 where rn=1;
 
+Scenario 3:
+
+Write a Query to provide the date for nth occurrence of sunday in future from given date.
+
+declare @today_date date;
+declare @n int;
+set @today_date='2022-01-03';
+set @n = 3;
+
+select dateadd(week,@n-1,dateadd(day,8-datepart(weekday,@today_date),@today_date)
 
 
 
