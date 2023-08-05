@@ -41,6 +41,41 @@ select customer_id, min(order_date) as first_visit_date from customer_orders gro
 
 select c.customer_id, c.order_date, fv.first_visit_date, case when c.order_date = fv.first_visit_date then 1 else 0 end as first_visit_flag,  case when c.order_date != fv.first_visit_date then 1 else 0 end as repeat_visit_flag from customer_orders c inner join first_visit fv on c.customer_id = fv.customer_id) abc group by abc.order_date;
 
+Scenario 2:
+
+CREATE TABLE employee_access (
+ name TEXT,
+ address TEXT,
+ email TEXT,
+ floor INTEGER,
+ resources TEXT
+);
+
+insert into employee_access values ('A','Bangalore','A@gmail.com',1,'CPU');
+insert into employee_access values ('A','Bangalore','A1@gmail.com',1,'CPU');
+insert into employee_access values ('A','Bangalore','A2@gmail.com',2,'DESKTOP');
+insert into employee_access values ('B','Bangalore','B@gmail.com',2,'DESKTOP');
+insert into employee_access values ('B','Bangalore','B1@gmail.com',2,'DESKTOP');
+insert into employee_access values ('B','Bangalore','B2@gmail.com',1,'MONITOR');
+
+select * from employee_access;
+
+with 
+total_visit as 
+(
+select name, count(1) as total_visit, group_concat(resources) as resources_used from employee_access group by name
+)
+,floor_visit as
+(
+select name, floor, count(1) as no_of_floor_visit, 
+rank() over(partition by name order by count(1) desc) as rn
+from employee_access group by name, floor
+) 
+
+select fv.name, fv.floor, tv.total_visit, tv.resources_used as most_visited_floor from floor_visit fv 
+inner join total_visit tv on fv.name=tv.name
+where rn=1;
+
 
 
 
