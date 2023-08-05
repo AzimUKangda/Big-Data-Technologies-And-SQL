@@ -11,6 +11,37 @@ Answer: select ename, hiredate, next_day(last_day(hiredate),'FRIDAY') - 7 from e
                                       union
         select ename,hiredate,next_day(last_day(hiredate),'FRIDAY') from emp where day(hiredate) > 15;
 
+Senario 1: Find a new and repeat customer:
+
+Answer:
+
+CREATE TABLE customer_orders (
+ order_id INTEGER PRIMARY KEY,
+ customer_id INTEGER,
+ order_date DATE,
+ order_amount INTEGER
+);
+
+INSERT INTO customer_orders VALUES (1, 100, '2022-01-01', 2000);
+INSERT INTO customer_orders VALUES (2, 200, '2022-01-01', 2500);
+INSERT INTO customer_orders VALUES (3, 300, '2022-01-01', 2100);
+INSERT INTO customer_orders VALUES (4, 100, '2022-01-02', 2000);
+INSERT INTO customer_orders VALUES (5, 400, '2022-01-02', 2200);
+INSERT INTO customer_orders VALUES (6, 500, '2022-01-02', 2700);
+INSERT INTO customer_orders VALUES (7, 100, '2022-01-03', 3000);
+INSERT INTO customer_orders VALUES (8, 400, '2022-01-03', 1000);
+INSERT INTO customer_orders VALUES (9, 600, '2022-01-03', 3000);
+select * from customer_orders;
+
+select * from customer_orders where customer_id = 200;
+
+select abc.order_date, sum(abc.first_visit_flag) as new_customer_count, sum(abc.repeat_visit_flag) as repeat_customer_flag from (with first_visit as(
+select customer_id, min(order_date) as first_visit_date from customer_orders group by customer_id
+)
+
+select c.customer_id, c.order_date, fv.first_visit_date, case when c.order_date = fv.first_visit_date then 1 else 0 end as first_visit_flag,  case when c.order_date != fv.first_visit_date then 1 else 0 end as repeat_visit_flag from customer_orders c inner join first_visit fv on c.customer_id = fv.customer_id) abc group by abc.order_date;
+
+
 
 
 
