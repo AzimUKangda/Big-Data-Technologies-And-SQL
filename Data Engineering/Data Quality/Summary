@@ -1,0 +1,31 @@
+Data Quality is a measure of how well data meets the needs and expectation of data consumers.
+
+Data Quality involves planning, implementing and controlling activities that apply quality management technique to data in order to ensure it fit for ots intended uses in operations, decision making and planning.
+
+there are six data quality dimension of access
+
+1) Completeness :-
+
+% of avalibilty of essential data in a given data set to deliver meaningful inferences and decision.
+
+it tells or measures if the data is sufficient to deliver meaningful inference and decision.
+
+2) Accuracy :-
+
+It tells How well does a piece of information reflect reality.
+
+3) Consistency :-
+
+Does information stored in one place match relevant data stored elsewhere.
+
+4) Timeliness :-
+
+Is your information available when you need it?
+
+5) Validity :-
+
+is information in a specific format, does it follow business rules or is it in an unusable format.
+
+6) Uniqueness :-
+
+Is this the only instance in which this information appears in the database
