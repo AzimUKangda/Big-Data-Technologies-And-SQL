@@ -1,0 +1,43 @@
+REST API?
+
+It's a interface that two compute systems use to exchange information securely over the internet.
+
+Most business applications have to communicate with other internal and third party applications to perform various tasks.
+
+REST is nothing but a software architecture that imposes conditions on how an API should work.
+
+The following are some of the principles of the REST architecture style:
+
+1) Uniform Interface
+
+it indicates that the server transfer information in a standard format.
+
+For example server can store data as text but send it in an HTML representation format.
+
+Uniform interface imposes four architecture constrains:
+
+1) Request should identify resources. They should do so using uniform respurce identifier.
+
+2) Clients have enough information in the resource represnetation to modify or delete the resource if they want to. The server meets this condition by sending the metadata that describe the resource further.
+
+3) Clients receive information about ho to process the represnetation further. the server achieve this by sending self descriptive message that contain metadata about how the client can best use them.
+
+4) Client receive informatiob about all other related resources they need to complete a task. The server achieve this by sending hyperlink in ther representiaition so that client can dynamically discover more resuources.
+
+Stateless:
+
+In REST architecture, stateless refers to a communication methos in which server complete every client request independetly of all previous request.
+
+Layered system:
+
+In a layered system architecture, the client can connect to other authorized intermediaries between client client and server abd it will still receiver responses from the server. Server can also pass requests to other servers.
+
+Cacheability:
+
+RESTful web services support caching, which is the process of storing some responses on the client or on an intermediary to improve server response time.
+
+Code on demand:
+
+In Rest architecture style server can temporarily extend or customize client functionlaity by tansferring software programm code to the client.
+
+For example, when you fill a regestration form on any website, your browser immediately highlights any mistakes you make, such as incorrect phone number. It can do this because of the code sent by the server.
