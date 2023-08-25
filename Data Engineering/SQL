@@ -89,6 +89,15 @@ set @n = 3;
 
 select dateadd(week,@n-1,dateadd(day,8-datepart(weekday,@today_date),@today_date)
 
+Write a SQL query to find all numbers that appear at least three times consecutive.
+
+select distinct l1.number as consecutiveNumber from log_data l1 join log_data l2 on l1.id = l2.id+1 and l1.number = l2.number
+join log_data l3 on l1.id = l3.id+2 and l1.number = l3.number
+
+column Name type
+id          int
+num         varchar
+
 
 
 
