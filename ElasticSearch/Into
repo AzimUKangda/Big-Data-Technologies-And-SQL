@@ -1,0 +1,19 @@
+Document :- it's  thigs you are secrhing for. same as row in database terminology.
+Index :- it's collection of document. same as table in databasse terminology. you can have one type of ducment inside one index.
+
+cluster as database.
+
+Documents are hased to a particular shard. each shard may be on a different node in a cluster.
+
+the index has two primary shard and two replica shared.
+
+write request are routed to the primary shard then replicated.
+read requests are routed to the primary or any replica.
+
+what is mapping?
+
+A mapping is a schema definition. elasticsearch has resonable defaults but sometimes you need to customize them.
+
+field types,
+field index : do you want this field indexed for full text search? 
+field analyzer :- tokenizer
